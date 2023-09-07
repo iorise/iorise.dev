@@ -6,10 +6,11 @@ import Link from "next/link";
 
 import { setTransition } from "@/lib/transition";
 import { Button } from "@/components/ui/button";
-import { MainNav } from "@/types";
+import { NavItem } from "@/types";
+import { Icons } from "@/components/icons";
 
 interface HeroProps {
-  link: MainNav[];
+  link: NavItem[];
 }
 export function Hero({ link }: HeroProps) {
   return (
@@ -50,21 +51,27 @@ export function Hero({ link }: HeroProps) {
       </motion.p>
       <motion.div
         {...setTransition({ delay: 0.4, typeIn: "spring", distanceY: 30 })}
-        className="flex gap-2 max-w-sm"
+        className="flex gap-3 max-w-sm"
       >
-        {link.map((item) => (
-          <Button
-            variant={item.title === "Resume" ? "outline" : "hover"}
-            key={item.title}
-            size="xl"
-            className="font-bold"
-            asChild
-          >
-            <Link target={item.external ? "_blank" : ""} href={item.href}>
-              {item.title}
-            </Link>
-          </Button>
-        ))}
+        {link.map((item) => {
+          const Icon = Icons[item.icon ?? "rightArrow"];
+          return (
+            <Button
+              variant={item.title === "Resume" ? "outline" : "hover"}
+              key={item.title}
+              size="xl"
+              className="font-bold group"
+              asChild
+            >
+              <Link target={item.external ? "_blank" : ""} href={item.href}>
+                <span className="w-full">{item.title}</span>
+                {item.icon ? (
+                  <Icon className="transition-transform fill-white dark:fill-black duration-300 translate-x-2 group-hover:translate-x-4 w-6 h-6" />
+                ) : null}
+              </Link>
+            </Button>
+          );
+        })}
       </motion.div>
     </div>
   );
