@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import Link from "next/link";
+
 import { usePathname } from "next/navigation";
 import { NavItem } from "@/types";
 import { Button } from "@/components/ui/button";
@@ -14,14 +15,14 @@ interface MainNavProps {
 export function MainNav({ mainNav }: MainNavProps) {
   const pathname = usePathname();
   return (
-    <div className="flex gap-5">
+    <div className="flex w-full gap-1 md:gap-5">
       {mainNav.length
         ? mainNav.map((item) => (
             <Button
               variant="none"
               key={item.title}
               className={cn(
-                "font-bold text-base md:text-lg",
+                "font-bold text-sm md:text-lg",
                 pathname === item.href
                   ? "text-primary"
                   : "text-muted-foreground",

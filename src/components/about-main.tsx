@@ -58,7 +58,7 @@ export function AboutMain({ links }: AboutMainProps) {
           </p>
         </motion.article>
       </section>
-      <section>
+      <section className="pt-12">
         <motion.div
           {...setTransition({
             distanceY: -60,
@@ -80,7 +80,7 @@ export function AboutMain({ links }: AboutMainProps) {
                         target={item.external ? "_blank" : ""}
                         key={i}
                       >
-                        <Icon className="w-12 h-12 hover:scale-110 transition-transform duration-300" />
+                        <Icon className="w-10 h-10 md:w-12 md:h-12 hover:scale-110 transition-transform duration-300" />
                       </Link>
                     </TooltipTrigger>
                     <TooltipContent>{item.description}</TooltipContent>

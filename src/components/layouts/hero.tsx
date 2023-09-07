@@ -13,6 +13,19 @@ interface HeroProps {
   link: NavItem[];
 }
 export function Hero({ link }: HeroProps) {
+  const [isMobile, setIsMobile] = React.useState(false);
+
+  React.useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
     <div className="w-full grid gap-2 md:gap-3 min-h-[calc(100vh_-_3.6rem)] content-center font-bold">
       <motion.h3
@@ -59,8 +72,8 @@ export function Hero({ link }: HeroProps) {
             <Button
               variant={item.title === "Resume" ? "outline" : "hover"}
               key={item.title}
-              size="xl"
-              className="font-bold group"
+              size={isMobile ? "sm" : "xl"}
+              className="font-bold group rounded-full"
               asChild
             >
               <Link target={item.external ? "_blank" : ""} href={item.href}>

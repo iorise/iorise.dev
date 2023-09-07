@@ -16,7 +16,7 @@ interface FooterProps {
 export function Footer({ links }: FooterProps) {
   return (
     <footer className="w-full bg-background">
-      <Shell as="div" className="pt-20">
+      <Shell as="div" className="pt-28">
         <motion.div
           className="w-full flex items-center"
           {...setTransition({
@@ -25,7 +25,7 @@ export function Footer({ links }: FooterProps) {
             distanceX: -100,
           })}
         >
-          <section className="grid gap-6 border p-6">
+          <section className="grid gap-6 border p-3 md:p-6">
             {links.map((item) => {
               const Icon = Icons[item.icon ?? "rightArrow"];
               return (
@@ -41,10 +41,10 @@ export function Footer({ links }: FooterProps) {
           </section>
           <section className="w-full">
             <div className="relative w-full flex items-center justify-center">
-              <div className="absolute inset-0 flex items-center w-full px-32">
+              <div className="absolute inset-0 flex items-center w-full px-3 md:px-32">
                 <span className="w-full border-b" />
               </div>
-              <span className="relative bg-background px-10 text-muted-foreground">
+              <span className="relative bg-background px-2 md:px-10 text-muted-foreground">
                 Rio F. &copy; 2023
               </span>
             </div>
