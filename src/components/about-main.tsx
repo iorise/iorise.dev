@@ -45,9 +45,10 @@ export function AboutMain({ links }: AboutMainProps) {
           </p>
           <p>
             I enjoy solving complex problems and building user-friendly
-            experiences. Whether it's crafting responsive user interfaces or
-            optimizing server-side performance, I'm dedicated to delivering
-            top-notch solutions that meet both user needs and business goals.
+            experiences. Whether it&apos;s crafting responsive user interfaces
+            or optimizing server-side performance, I&apos;m dedicated to
+            delivering top-notch solutions that meet both user needs and
+            business goals.
           </p>
           <p>
             In every project, my goal is to exceed expectations and contribute
@@ -67,26 +68,26 @@ export function AboutMain({ links }: AboutMainProps) {
         >
           <PageHeader className="py-6" title="Recent tech" />
           <div className="flex gap-6">
-            {links.map((item) => {
-              const Icon = Icons[item.icon ?? "rightArrow"];
+            <TooltipProvider delayDuration={100}>
+              {links.map((item, i) => {
+                const Icon = Icons[item.icon ?? "rightArrow"];
 
-              return (
-                <TooltipProvider delayDuration={100}>
-                  <Tooltip key={item.title}>
+                return (
+                  <Tooltip key={i}>
                     <TooltipTrigger>
                       <Link
                         href={item.href}
                         target={item.external ? "_blank" : ""}
-                        key={item.title}
+                        key={i}
                       >
                         <Icon className="w-12 h-12 hover:scale-110 transition-transform duration-300" />
                       </Link>
                     </TooltipTrigger>
                     <TooltipContent>{item.description}</TooltipContent>
                   </Tooltip>
-                </TooltipProvider>
-              );
-            })}
+                );
+              })}
+            </TooltipProvider>
           </div>
         </motion.div>
       </section>

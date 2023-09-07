@@ -43,7 +43,7 @@ export function Hero({ link }: HeroProps) {
         })}
         className="text-sm md:text-lg max-w-3xl text-muted-foreground leading-normal"
       >
-        i'm a self-taught full stack web developer. As a tech enthusiast in
+        i&apos;m a self-taught full stack web developer. As a tech enthusiast in
         website development, I strive to create intuitive, attractive and
         responsive user experiences through a combination of good design,
         powerful functionality and optimal performance in the frontend and
