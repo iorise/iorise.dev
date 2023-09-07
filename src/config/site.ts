@@ -3,7 +3,7 @@ import { NavItem } from "@/types";
 export const siteConfig = {
   name: "Rio Firmansyah",
   description: "Rio firmansyah personal portfolio website",
-  url: "",
+  url: "https://iorise.vercel.app",
   navItem: [
     {
       title: "Home",
