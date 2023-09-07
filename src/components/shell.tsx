@@ -9,7 +9,6 @@ const shellVariants = cva("grid items-center gap-10 py-6", {
       default: "container",
       sidebar: "",
       centered: "container flex h-[100dvh] max-w-2xl flex-col justify-center",
-      markdown: "container max-w-3xl gap-0 py-8 md:py-10 lg:py-10",
     },
   },
   defaultVariants: {

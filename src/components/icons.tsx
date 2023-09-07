@@ -6,7 +6,7 @@ import {
   SiTailwindcss,
 } from "react-icons/si";
 import { FaNodeJs } from "react-icons/fa";
-import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
+import { AiFillGithub, AiFillLinkedin, AiFillWarning } from "react-icons/ai";
 
 export const Icons = {
   nextJs: SiNextdotjs,
@@ -16,6 +16,7 @@ export const Icons = {
   tailwindCss: SiTailwindcss,
   github: AiFillGithub,
   linkedin: AiFillLinkedin,
+  warning: AiFillWarning,
   rightArrow: ({ ...props }: LucideProps) => (
     <svg
       fill="#000000"
