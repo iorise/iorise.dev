@@ -9,11 +9,10 @@ export const siteConfig = {
       title: "Home",
       href: "/",
     },
-    {
-      title: "Blog",
-      href: "/blog",
-      disabled: true,
-    },
+    // {
+    //   title: "Blog",
+    //   href: "/blog",
+    // },
     {
       title: "Projects",
       href: "/projects",
